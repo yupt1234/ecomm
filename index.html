@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Info-Fix | CCTV, Computer & Security Solutions – Raipur</title>
+<meta name="description" content="Info-Fix Raipur – CCTV installation, repair, computer sales, AMC contracts for offices, schools & colleges. Order online, get delivery in Raipur. Call or WhatsApp: +91 XXXXXXXXXX">
+<meta name="keywords" content="CCTV installation Raipur, CCTV repair Raipur, computer sales Raipur, CCTV dealer Raipur, DVR repair Raipur, computer AMC Raipur, Info-Fix Raipur, security camera Raipur">
+<meta property="og:title" content="Info-Fix – CCTV & Computer Solutions, Raipur">
+<meta property="og:description" content="Trusted CCTV & Computer services in Raipur. 24/7 support. Order via WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1420;
+    --bg3: #111b2e;
+    --accent: #00d4ff;
+    --accent2: #ff6b00;
+    --green: #00ff88;
+    --text: #e8eef8;
+    --muted: #6a7a90;
+    --card: #0f1825;
+    --border: rgba(0,212,255,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
+
+  /* NAVBAR */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(8,12,20,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(0,212,255,0.5);
+  }
+  .logo span { color: var(--accent2); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-weight: 600; font-size: 13px; letter-spacing: 1.5px;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 8px 20px; border-radius: 4px;
+    font-weight: 700; font-size: 13px; letter-spacing: 1px;
+    text-decoration: none; text-transform: uppercase;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .nav-cta:hover { background: #33ddff; transform: translateY(-1px); }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-glow {
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute; bottom: -100px; left: -100px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3);
+    color: var(--green); padding: 6px 16px; border-radius: 100px;
+    font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 24px; width: fit-content;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(0,255,136,0); }
+  }
+  .badge-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+    animation: blink 1.5s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.92; letter-spacing: 2px;
+    margin-bottom: 20px; position: relative; z-index: 1;
+  }
+  h1 .line2 { color: var(--accent); display: block; }
+  h1 .line3 { color: var(--accent2); display: block; }
+  .hero-sub {
+    font-size: 18px; color: var(--muted); max-width: 520px;
+    line-height: 1.6; margin-bottom: 40px; font-weight: 500;
+    position: relative; z-index: 1;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 32px; border-radius: 6px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 16px; letter-spacing: 1px;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,0.3); }
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25d366; color: #fff;
+    padding: 14px 32px; border-radius: 6px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 16px; letter-spacing: 1px;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-whatsapp:hover { background: #1ebe5c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--text);
+    padding: 14px 32px; border-radius: 6px; border: 1px solid var(--border);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 16px; letter-spacing: 1px;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .stats-row {
+    display: flex; gap: 48px; margin-top: 56px;
+    padding-top: 40px; border-top: 1px solid var(--border);
+    flex-wrap: wrap; position: relative; z-index: 1;
+  }
+  .stat-item { }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px; color: var(--accent); line-height: 1;
+  }
+  .stat-num span { color: var(--accent2); }
+  .stat-label { font-size: 13px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+
+  /* SECTION COMMON */
+  section { padding: 80px 5%; }
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent); letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 60px); line-height: 1;
+    margin-bottom: 16px; letter-spacing: 1px;
+  }
+  h2 span { color: var(--accent); }
+  .section-desc { color: var(--muted); font-size: 17px; max-width: 500px; line-height: 1.6; margin-bottom: 48px; }
+
+  /* SERVICES */
+  #services { background: var(--bg2); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,212,255,0.1); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon { font-size: 36px; margin-bottom: 16px; }
+  .service-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .service-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .service-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--accent); font-weight: 500;
+  }
+  .service-order-btn {
+    margin-top: 16px; width: 100%;
+    background: rgba(0,212,255,0.1); color: var(--accent);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 10px; font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 14px; letter-spacing: 1px;
+    text-transform: uppercase; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .service-order-btn:hover { background: var(--accent); color: #000; }
+
+  /* PRODUCTS */
+  #products { background: var(--bg); }
+  .products-filter {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .filter-btn {
+    padding: 8px 20px; border-radius: 100px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; cursor: pointer;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--muted); transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .product-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    transition: all 0.3s;
+  }
+  .product-card:hover { border-color: rgba(0,212,255,0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,212,255,0.08); }
+  .product-img {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+    background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(255,107,0,0.05));
+    border-bottom: 1px solid var(--border);
+  }
+  .product-body { padding: 20px; }
+  .product-category {
+    font-size: 11px; color: var(--accent); letter-spacing: 2px;
+    text-transform: uppercase; font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 8px;
+  }
+  .product-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .product-desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+  .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .product-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; color: var(--accent2);
+  }
+  .product-price .unit { font-family: 'Rajdhani', sans-serif; font-size: 12px; color: var(--muted); display: block; }
+  .add-btn {
+    background: #25d366; color: #fff;
+    border: none; border-radius: 6px;
+    padding: 10px 16px; font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 13px; letter-spacing: 0.5px;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .add-btn:hover { background: #1ebe5c; transform: scale(1.04); }
+
+  /* AMC / CONTRACTS */
+  #contracts { background: var(--bg2); }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .plan-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px 28px;
+    position: relative; transition: all 0.3s;
+  }
+  .plan-card.featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 40px rgba(0,212,255,0.1);
+  }
+  .plan-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #000;
+    padding: 4px 16px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .plan-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 8px; }
+  .plan-price {
+    font-family: 'Bebas Neue', sans-serif; font-size: 48px;
+    color: var(--accent); line-height: 1; margin-bottom: 4px;
+  }
+  .plan-price .currency { font-size: 24px; }
+  .plan-period { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .plan-features { list-style: none; margin-bottom: 28px; }
+  .plan-features li {
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px; display: flex; align-items: center; gap: 10px;
+  }
+  .plan-features li:last-child { border-bottom: none; }
+  .plan-features .check { color: var(--green); font-size: 16px; }
+  .plan-features .cross { color: var(--muted); font-size: 16px; }
+  .plan-cta {
+    width: 100%; padding: 14px;
+    font-family: 'Rajdhani', sans-serif; font-weight: 700;
+    font-size: 15px; letter-spacing: 1px; text-transform: uppercase;
+    border-radius: 6px; cursor: pointer; transition: all 0.2s;
+    border: 1px solid var(--border); background: transparent; color: var(--text);
+  }
+  .plan-cta.featured-btn {
+    background: var(--accent); color: #000; border-color: var(--accent);
+  }
+  .plan-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* ORDER MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 16px; padding: 36px; width: 100%; max-width: 520px;
+    max-height: 90vh; overflow-y: auto;
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform: translateY(20px) scale(0.97); } to { opacity:1; transform: none; } }
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;
+  }
+  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; }
+  .modal-close {
+    background: rgba(255,255,255,0.07); border: none; color: var(--text);
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 18px;
+    display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.15); }
+  .form-group { margin-bottom: 18px; }
+  .form-label { font-size: 13px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 12px 16px; color: var(--text);
+    font-family: 'Rajdhani', sans-serif; font-size: 16px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
+  .form-select option { background: var(--bg3); }
+  .form-textarea { height: 100px; resize: vertical; }
+  .order-summary {
+    background: rgba(0,212,255,0.05); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px; margin-bottom: 20px;
+  }
+  .order-summary-title { font-size: 12px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  #order-item-name { font-size: 18px; font-weight: 700; }
+  #order-item-price { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .submit-order {
+    width: 100%; background: #25d366; color: #fff;
+    border: none; border-radius: 8px; padding: 16px;
+    font-family: 'Rajdhani', sans-serif; font-weight: 700;
+    font-size: 17px; letter-spacing: 1px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .submit-order:hover { background: #1ebe5c; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+
+  /* WHY US */
+  #why { background: var(--bg); }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+  .why-card {
+    text-align: center; padding: 32px 24px;
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--card); transition: all 0.3s;
+  }
+  .why-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .why-icon { font-size: 40px; margin-bottom: 16px; }
+  .why-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .why-text { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+  /* CONTACT */
+  #contact { background: var(--bg2); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .contact-info-block { }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .contact-icon-box {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: rgba(0,212,255,0.1); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+    flex-shrink: 0;
+  }
+  .contact-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .contact-val { font-size: 16px; font-weight: 600; }
+  .contact-val a { color: var(--text); text-decoration: none; }
+  .contact-val a:hover { color: var(--accent); }
+  .rating-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-top: 8px;
+  }
+  .stars { font-size: 24px; margin-bottom: 8px; }
+  .rating-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--accent2); line-height: 1; }
+  .rating-sub { font-size: 14px; color: var(--muted); }
+  .quick-order-form { }
+
+  /* FLOATING WHATSAPP */
+  .float-wa {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25d366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none; cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.2s;
+  }
+  .float-wa:hover { transform: scale(1.1); }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .float-wa-label {
+    position: absolute; right: 72px; background: #25d366;
+    color: #fff; padding: 6px 14px; border-radius: 100px;
+    font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px;
+    white-space: nowrap; opacity: 0; pointer-events: none;
+    transition: opacity 0.2s; letter-spacing: 0.5px;
+  }
+  .float-wa:hover .float-wa-label { opacity: 1; }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg); border-top: 1px solid var(--border);
+    padding: 40px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: gap;
+  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--accent); letter-spacing: 2px; }
+  .footer-logo span { color: var(--accent2); }
+  .footer-text { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .stats-row { gap: 28px; }
+    footer { flex-direction: column; gap: 20px; text-align: center; }
+  }
+
+  /* SCROLL ANIMATION */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
+  .fade-up.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">INFO<span>-FIX</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contracts">AMC Plans</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#services" class="nav-cta">Order Now</a>
+  <div class="hamburger" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="badge"><div class="badge-dot"></div>Open 24 Hours · Raipur</div>
+  <h1>
+    CCTV &
+    <span class="line2">COMPUTER</span>
+    <span class="line3">SOLUTIONS</span>
+  </h1>
+  <p class="hero-sub">Trusted security & IT services in Raipur. CCTV installation, repair, computer sales & AMC contracts for offices, schools & universities.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="openModal('General Enquiry','Contact for pricing')">📋 Place an Order</button>
+    <a href="https://wa.me/917999XXXXXX?text=Hello%20Info-Fix!%20I%20need%20your%20services." class="btn-whatsapp" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">4.6<span>★</span></div>
+      <div class="stat-label">JustDial Rating</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">77<span>+</span></div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24<span>/7</span></div>
+      <div class="stat-label">Support Available</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10<span>+</span></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-tag">// What We Do</p>
+  <h2>OUR <span>SERVICES</span></h2>
+  <p class="section-desc">Professional installation, repair & maintenance – for homes, offices, schools and more.</p>
+
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">📹</div>
+      <div class="service-name">CCTV Installation</div>
+      <div class="service-desc">Complete IP & HD camera setup for homes, offices, shops. Professional wiring, NVR/DVR configuration & testing.</div>
+      <div class="service-price">Starting ₹2,500 / camera</div>
+      <button class="service-order-btn" onclick="openModal('CCTV Installation','Starting ₹2,500 per camera')">Order on WhatsApp →</button>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🔧</div>
+      <div class="service-name">CCTV Camera Repair</div>
+      <div class="service-desc">On-site diagnosis & repair of all CCTV camera brands. Night vision, lens & housing replacement.</div>
+      <div class="service-price">Starting ₹500</div>
+      <button class="service-order-btn" onclick="openModal('CCTV Camera Repair','Starting ₹500')">Order on WhatsApp →</button>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🖥️</div>
+      <div class="service-name">DVR / NVR Repair</div>
+      <div class="service-desc">Complete DVR/NVR board-level repair, hard disk replacement, firmware update & remote access setup.</div>
+      <div class="service-price">Starting ₹800</div>
+      <button class="service-order-btn" onclick="openModal('DVR / NVR Repair','Starting ₹800')">Order on WhatsApp →</button>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">💻</div>
+      <div class="service-name">Computer Repair</div>
+      <div class="service-desc">Laptop & desktop repair, OS installation, virus removal, hardware upgrade & data recovery.</div>
+      <div class="service-price">Starting ₹400</div>
+      <button class="service-order-btn" onclick="openModal('Computer Repair','Starting ₹400')">Order on WhatsApp →</button>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🏫</div>
+      <div class="service-name">Computer Lab Setup</div>
+      <div class="service-desc">Full computer lab design, installation & networking for schools, colleges & universities. AMC available.</div>
+      <div class="service-price">Custom Quote</div>
+      <button class="service-order-btn" onclick="openModal('Computer Lab Setup','Custom Quote – will be discussed')">Order on WhatsApp →</button>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🌐</div>
+      <div class="service-name">Networking & Wi-Fi</div>
+      <div class="service-desc">LAN setup, Wi-Fi access point installation, server room cabling & network troubleshooting.</div>
+      <div class="service-price">Starting ₹1,500</div>
+      <button class="service-order-btn" onclick="openModal('Networking & Wi-Fi Setup','Starting ₹1,500')">Order on WhatsApp →</button>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <p class="section-tag">// Shop Now</p>
+  <h2>OUR <span>PRODUCTS</span></h2>
+  <p class="section-desc">Quality CCTV cameras, DVRs, accessories & computers — order directly on WhatsApp.</p>
+
+  <div class="products-filter">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+    <button class="filter-btn" onclick="filterProducts('cctv', this)">CCTV</button>
+    <button class="filter-btn" onclick="filterProducts('computer', this)">Computers</button>
+    <button class="filter-btn" onclick="filterProducts('accessories', this)">Accessories</button>
+  </div>
+
+  <div class="products-grid" id="products-grid">
+    <!-- products injected by JS -->
+  </div>
+</section>
+
+<!-- AMC / CONTRACTS -->
+<section id="contracts">
+  <p class="section-tag">// Annual Contracts</p>
+  <h2>AMC <span>PLANS</span></h2>
+  <p class="section-desc">Annual maintenance contracts for offices, schools, colleges & institutions. Hassle-free IT support all year.</p>
+
+  <div class="plans-grid">
+    <div class="plan-card fade-up">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price"><span class="currency">₹</span>4,999</div>
+      <div class="plan-period">/ year · Up to 5 systems</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Quarterly site visit</li>
+        <li><span class="check">✓</span> Phone support</li>
+        <li><span class="check">✓</span> OS reinstallation</li>
+        <li><span class="cross">✗</span> Hardware replacement</li>
+        <li><span class="cross">✗</span> Priority response</li>
+      </ul>
+      <button class="plan-cta" onclick="openModal('AMC Basic Plan','₹4,999 / year – up to 5 systems')">Enquire Now</button>
+    </div>
+
+    <div class="plan-card featured fade-up">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Standard</div>
+      <div class="plan-price"><span class="currency">₹</span>9,999</div>
+      <div class="plan-period">/ year · Up to 15 systems</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Monthly site visit</li>
+        <li><span class="check">✓</span> 24/7 phone support</li>
+        <li><span class="check">✓</span> OS & software support</li>
+        <li><span class="check">✓</span> Minor hardware repair</li>
+        <li><span class="cross">✗</span> Dedicated engineer</li>
+      </ul>
+      <button class="plan-cta featured-btn" onclick="openModal('AMC Standard Plan','₹9,999 / year – up to 15 systems')">Enquire Now</button>
+    </div>
+
+    <div class="plan-card fade-up">
+      <div class="plan-name">Premium</div>
+      <div class="plan-price"><span class="currency">₹</span>19,999</div>
+      <div class="plan-period">/ year · Unlimited systems</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Weekly site visit</li>
+        <li><span class="check">✓</span> 24/7 WhatsApp support</li>
+        <li><span class="check">✓</span> Full software support</li>
+        <li><span class="check">✓</span> Hardware replacement</li>
+        <li><span class="check">✓</span> Dedicated engineer</li>
+      </ul>
+      <button class="plan-cta" onclick="openModal('AMC Premium Plan','₹19,999 / year – unlimited systems')">Enquire Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <p class="section-tag">// Why Choose Us</p>
+  <h2>TRUSTED BY <span>RAIPUR</span></h2>
+  <div class="why-grid">
+    <div class="why-card fade-up">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">Fast Response</div>
+      <div class="why-text">Same-day service for most repairs. 24/7 emergency support for critical issues.</div>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-icon">🛡️</div>
+      <div class="why-title">Genuine Parts</div>
+      <div class="why-text">Only certified & branded components. 3-month warranty on all repair work.</div>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-icon">💰</div>
+      <div class="why-title">Best Prices</div>
+      <div class="why-text">Competitive pricing with no hidden charges. Free consultation & diagnosis.</div>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-icon">🎓</div>
+      <div class="why-title">Expert Team</div>
+      <div class="why-text">Trained technicians with 10+ years in CCTV, networking & computer systems.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-tag">// Find Us</p>
+  <h2>GET IN <span>TOUCH</span></h2>
+  <div class="contact-grid">
+    <div class="contact-info-block fade-up">
+      <div class="contact-item">
+        <div class="contact-icon-box">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-val">Purani Basti, Raipur<br>Chhattisgarh – 492001<br><small style="color:var(--muted)">(Near Police Station)</small></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">📞</div>
+        <div>
+          <div class="contact-label">Phone / WhatsApp</div>
+          <div class="contact-val"><a href="tel:+917999XXXXXX">+91 79993 XXXXX</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">🕐</div>
+        <div>
+          <div class="contact-label">Working Hours</div>
+          <div class="contact-val" style="color:var(--green)">Open 24 Hours, 7 Days</div>
+        </div>
+      </div>
+      <div class="rating-box">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="rating-num">4.6</div>
+        <div class="rating-sub">Based on 77+ reviews on JustDial</div>
+      </div>
+    </div>
+
+    <div class="quick-order-form fade-up">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;">
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:24px;margin-bottom:20px;letter-spacing:1px;">QUICK <span style="color:var(--accent)">ENQUIRY</span></h3>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" id="cname" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" id="cphone" type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Required</label>
+          <select class="form-select" id="cservice">
+            <option value="CCTV Installation">CCTV Installation</option>
+            <option value="CCTV Repair">CCTV Camera Repair</option>
+            <option value="DVR Repair">DVR / NVR Repair</option>
+            <option value="Computer Repair">Computer Repair</option>
+            <option value="Computer Lab Setup">Computer Lab Setup</option>
+            <option value="AMC Contract">AMC Contract</option>
+            <option value="Other">Other / Custom</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" id="cmessage" placeholder="Describe your requirement..."></textarea>
+        </div>
+        <button class="submit-order" onclick="sendContactWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">INFO<span>-FIX</span></div>
+    <div class="footer-text">© 2025 Info-Fix, Raipur · All rights reserved</div>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a href="#contracts">AMC Plans</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/917999XXXXXX" target="_blank" style="color:#25d366">WhatsApp</a>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/917999XXXXXX?text=Hello%20Info-Fix!%20I%20want%20to%20place%20an%20order." target="_blank">
+  <span class="float-wa-label">Chat with us!</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="order-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">PLACE <span style="color:var(--accent)">ORDER</span></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="order-summary">
+      <div class="order-summary-title">Selected Item</div>
+      <div id="order-item-name">–</div>
+      <div id="order-item-price"></div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Your Name *</label>
+      <input class="form-input" id="m-name" placeholder="Full name">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Phone Number *</label>
+      <input class="form-input" id="m-phone" type="tel" placeholder="+91 XXXXX XXXXX">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Address / Area</label>
+      <input class="form-input" id="m-address" placeholder="Your locality in Raipur">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Additional Notes</label>
+      <textarea class="form-textarea" id="m-notes" placeholder="Any special requirements..."></textarea>
+    </div>
+    <button class="submit-order" onclick="sendOrderWhatsApp()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Confirm & Send on WhatsApp
+    </button>
+  </div>
+</div>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────────
+const WA_NUMBER = '91XXXXXXXXXX'; // 👈 REPLACE with actual number e.g. 917999123456
+
+// ─── PRODUCTS DATA ────────────────────────────────────────
+const products = [
+  { id:1, cat:'cctv', icon:'📷', name:'HD Dome Camera 2MP', desc:'1080p indoor dome CCTV, night vision up to 20m, wide angle 3.6mm lens.', price:'₹1,499', tag:'CCTV Camera' },
+  { id:2, cat:'cctv', icon:'🎥', name:'Bullet Camera 4MP', desc:'Outdoor waterproof IP66, 4MP full HD, IR night vision 30m, PoE support.', price:'₹2,299', tag:'CCTV Camera' },
+  { id:3, cat:'cctv', icon:'💾', name:'4Ch DVR (1080P)', desc:'4-channel standalone DVR, supports AHD/TVI/CVI/CVBS, remote view via app.', price:'₹3,499', tag:'DVR/NVR' },
+  { id:4, cat:'cctv', icon:'📦', name:'4 Camera CCTV Kit', desc:'Complete kit: 4 dome cameras + 4Ch DVR + cables + power supply.', price:'₹8,999', tag:'CCTV Kit' },
+  { id:5, cat:'cctv', icon:'📡', name:'8Ch NVR 5MP', desc:'8-channel NVR with PoE ports, supports up to 5MP IP cameras.', price:'₹6,500', tag:'DVR/NVR' },
+  { id:6, cat:'computer', icon:'🖥️', name:'Desktop PC (Core i5)', desc:'Intel Core i5, 8GB RAM, 512GB SSD, Win11 Home, HD display. Office & school use.', price:'₹28,000', tag:'Desktop' },
+  { id:7, cat:'computer', icon:'💻', name:'Laptop Refurbished', desc:'Dell/HP refurbished laptop, i3/i5, 8GB RAM, 256GB SSD, 3-month warranty.', price:'₹16,500', tag:'Laptop' },
+  { id:8, cat:'accessories', icon:'🖱️', name:'Keyboard + Mouse Combo', desc:'Wired USB keyboard & optical mouse combo, plug & play.', price:'₹499', tag:'Accessory' },
+  { id:9, cat:'accessories', icon:'🔌', name:'CCTV Power Supply 4Ch', desc:'12V 5A CCTV power supply box for 4 cameras, metal body.', price:'₹450', tag:'Accessory' },
+  { id:10, cat:'accessories', icon:'📼', name:'1TB Surveillance HDD', desc:'Seagate / WD 1TB hard disk for DVR/NVR recording, 24x7 rated.', price:'₹3,200', tag:'Storage' },
+];
+
+function renderProducts(cat = 'all') {
+  const grid = document.getElementById('products-grid');
+  const filtered = cat === 'all' ? products : products.filter(p => p.cat === cat);
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      <div class="product-img">${p.icon}</div>
+      <div class="product-body">
+        <div class="product-category">${p.tag}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div class="product-price">${p.price}</div>
+          <button class="add-btn" onclick="openModal('${p.name.replace(/'/g,"\\'")}','${p.price}')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat, el) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  renderProducts(cat);
+}
+
+// ─── MODAL ────────────────────────────────────────────────
+function openModal(name, price) {
+  document.getElementById('order-item-name').textContent = name;
+  document.getElementById('order-item-price').textContent = price;
+  document.getElementById('order-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('order-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('order-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// ─── WHATSAPP ORDER ───────────────────────────────────────
+function sendOrderWhatsApp() {
+  const name = document.getElementById('m-name').value.trim();
+  const phone = document.getElementById('m-phone').value.trim();
+  const item = document.getElementById('order-item-name').textContent;
+  const price = document.getElementById('order-item-price').textContent;
+  const address = document.getElementById('m-address').value.trim();
+  const notes = document.getElementById('m-notes').value.trim();
+
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+
+  const msg = `🛒 *NEW ORDER – Info-Fix Website*\n\n` +
+    `*Item:* ${item}\n` +
+    `*Price:* ${price}\n\n` +
+    `*Customer Name:* ${name}\n` +
+    `*Phone:* ${phone}\n` +
+    `*Address:* ${address || 'Not provided'}\n` +
+    `*Notes:* ${notes || 'None'}\n\n` +
+    `_Sent from infofix.in_`;
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+  closeModal();
+}
+
+function sendContactWhatsApp() {
+  const name = document.getElementById('cname').value.trim();
+  const phone = document.getElementById('cphone').value.trim();
+  const service = document.getElementById('cservice').value;
+  const message = document.getElementById('cmessage').value.trim();
+
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+
+  const msg = `📩 *ENQUIRY – Info-Fix Website*\n\n` +
+    `*Name:* ${name}\n` +
+    `*Phone:* ${phone}\n` +
+    `*Service:* ${service}\n` +
+    `*Message:* ${message || 'No message'}\n\n` +
+    `_Sent from infofix.in_`;
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// ─── SCROLL ANIMATION ─────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ─── MOBILE NAV ───────────────────────────────────────────
+function toggleMobileNav() {
+  const links = document.querySelector('.nav-links');
+  const cta = document.querySelector('.nav-cta');
+  if (links.style.display === 'flex') {
+    links.style.display = ''; cta.style.display = '';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(8,12,20,0.97);padding:20px 5%;gap:16px;border-bottom:1px solid rgba(0,212,255,0.15);z-index:99;';
+    cta.style.cssText = 'display:block;margin:8px 5% 20px;position:fixed;top:160px;left:0;right:0;z-index:99;text-align:center;border-radius:8px;padding:12px;';
+  }
+}
+
+// ─── INIT ─────────────────────────────────────────────────
+renderProducts();
+</script>
+</body>
+</html>
